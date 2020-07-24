@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+.full-width {
+    width: 98%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.custom-content-area {
+    padding-left: 0!important;
+    padding-right: 0.5rem!important;
+    padding-top: 0!important;
+    padding-bottom: 0!important;    
+}
+
+.overflow-y-scroll {
+    
+    height: 80vh;
+}
+
+.clr-form-control {
+    display: inline!important;
+}
+
+.clr-control-label-custom {
+    font-size: larger;
+}
+
+.clr-control-text-custom {
+    font-size: larger;
+}
+
+textarea {
+    margin: 2%;
+    padding: 2%;
+    border: 1;
+    width: 96%;
+    height: 100%;
+    vertical-align:top;
+}
+
+.clr-row-full-height {
+    height: 85%;
+}
+
+.clr-textarea-custom {
+    height: 100%;
+}

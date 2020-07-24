@@ -1,0 +1,26 @@
+<div class="clr-row">
+    <div class="clr-col clr-align-self-center">
+        <label for="key" class="clr-control-label clr-control-label-custom" style="display: unset;">{{ key?.keyType | uppercase }}</label>
+        <input type="text" id="key" placeholder="KEY" class="clr-input clr-control-text-custom" style="width: 70%;" value="{{ key?.key }}">
+        <label for="ttl" class="clr-control-label clr-control-label-custom" style="display: unset;">TTL</label>
+        <input type="text" id="ttl" placeholder="TTL" class="clr-input clr-control-text-custom" style="width: 10%;" value="{{ key?.ttl }}">
+    </div>
+    <div class="clr-col-5">
+        <button class="btn btn-primary" type="button" (click)="reloadKey()">
+            <clr-icon shape="refresh" class=""></clr-icon> RELOAD
+        </button>
+        <button class="btn btn-danger" type="button" (click)="deleteKey()">
+            <clr-icon shape="trash" class=""></clr-icon> DELETE
+        </button>
+        <select clrSelect name="options" (change)="formatData($event.target.value)">
+            <option value="text">Text</option>
+            <option value="json">JSON</option>
+        </select>
+    </div>
+</div>
+
+<div class="clr-row clr-row-full-height">
+    <div class="clr-col">
+        <textarea class="clr-textarea clr-textarea-custom" [(ngModel)]='formattedData' ></textarea>
+    </div>
+</div>

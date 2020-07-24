@@ -1,0 +1,75 @@
+<header class="header header-6">
+    <div class="branding">
+        <a [routerLink]="">
+            <clr-icon shape="storage"></clr-icon>
+            <span class="title">RedUI - Redis Desktop</span>
+        </a>
+    </div>
+    <div class="header-nav">
+        <a [routerLink]="" role="tooltip" aria-haspopup="true"
+            class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="showConnectDialog()">
+            <clr-icon size="32" shape="connect" class="is-success is-solid"></clr-icon>
+            <span class="tooltip-content">Connect</span>
+        </a>
+        <a [routerLink]="" role="tooltip" aria-haspopup="true"
+            class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="disconnect()">
+            <clr-icon size="32" shape="disconnect" class="is-error is-solid"></clr-icon>
+            <span class="tooltip-content">Disconnect</span>
+        </a>
+    </div>
+    <div class="header-nav">
+        <form class="search">
+            <label for="filterExp">
+                <input id="filterExp" name="filterExp" type="text" [(ngModel)]='filterExp'>
+            </label>
+        </form>
+    </div>
+    <div class="header-nav">
+        <a [routerLink]="" role="tooltip" aria-haspopup="true"
+            class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="scanKeys()">
+            <clr-icon size="32" shape="install" class="is-success is-solid"></clr-icon>
+            <span class="tooltip-content">Scan Keys</span>
+        </a>
+
+        <a [routerLink]="" role="tooltip" aria-haspopup="true"
+            class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="scanMore()">
+            <clr-icon size="32" shape="sync" class="is-success is-solid"></clr-icon>
+            <span class="tooltip-content">Load More</span>
+        </a>
+    </div>
+    <div class="header-nav">
+        <a [routerLink]="" role="tooltip" aria-haspopup="true"
+            class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="getKeys()">
+            <clr-icon size="32" shape="download" class="is-success is-solid"></clr-icon>
+            <span class="tooltip-content">Get Keys</span>
+        </a>
+    </div>
+    <div class="header-actions">
+        <a [routerLink]="" class="nav-link nav-icon-text">
+            <span class="nav-text">Status: {{ status }}</span>
+        </a>
+    </div>
+</header>
+
+<clr-modal [(clrModalOpen)]="connectDialog">
+    <h3 class="modal-title">Connect</h3>
+    <div class="modal-body">
+        <p>Connect to Redis Server</p>
+
+        <form clrForm>
+            <clr-input-container>
+                <label>Hostname or IP</label>
+                <input clrInput type="text" name="hostname" [(ngModel)]="connection.host" />
+            </clr-input-container>
+            <clr-input-container>
+                <label>Port</label>
+                <input clrInput type="text" name="port" [(ngModel)]="connection.port" />
+            </clr-input-container>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="connectDialog = false">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="connect()">Ok</button>
+    </div>
+</clr-modal>

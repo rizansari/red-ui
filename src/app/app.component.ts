@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'RedUI';
+  title = 'RedUI - Redis Desktop';
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    console.log(event.target.innerWidth);
+  }
 }

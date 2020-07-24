@@ -1,0 +1,36 @@
+<div class="clr-row">
+    <div class="clr-col clr-align-self-center">
+        <label for="key" class="clr-control-label clr-control-label-custom" style="display: unset;">{{ key?.keyType | uppercase }}</label>
+        <input type="text" id="key" placeholder="KEY" class="clr-input clr-control-text-custom" style="width: 70%;" value="{{ key?.key }}">
+        <label for="ttl" class="clr-control-label clr-control-label-custom" style="display: unset;">TTL</label>
+        <input type="text" id="ttl" placeholder="TTL" class="clr-input clr-control-text-custom" style="width: 10%;" value="{{ key?.ttl }}">
+    </div>
+    <div class="clr-col-4">
+        <button class="btn btn-primary" type="button" (click)="reloadKey()">
+            <clr-icon shape="refresh" class=""></clr-icon> RELOAD
+        </button>
+        <button class="btn btn-danger" type="button" (click)="deleteKey()">
+            <clr-icon shape="trash" class=""></clr-icon> DELETE
+        </button>
+        
+    </div>
+</div>
+
+<div class="clr-row">
+    <div class="clr-col-12 clr-col-lg-12 clr-col-xl-12">
+        <table class="table" style="margin-right: 2%; margin-left: 1%;">
+            <thead>
+                <tr>
+                    <td class="left">Key</td>
+                    <td class="left">Value</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let k of key.hashData">
+                    <td class="left">{{ k }}</td>
+                    <td class="left">{{ key.data[k] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

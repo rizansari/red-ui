@@ -1,0 +1,4 @@
+<app-mainpanel-string [key]="key" *ngIf="key?.keyType === 'string' || key?.keyType === 'set'"></app-mainpanel-string>
+<app-mainpanel-hash [key]="key" *ngIf="key?.keyType === 'hash'"></app-mainpanel-hash>
+<app-mainpanel-list [key]="key" *ngIf="key?.keyType === 'list'"></app-mainpanel-list>
+<!-- <app-mainpanel-set *ngIf="key?.keyType === 'set'"></app-mainpanel-set> -->

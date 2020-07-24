@@ -1,0 +1,11 @@
+<div class="content-container overflow-y-scroll">
+    <div class="content-area custom-content-area">
+        <clr-datagrid>
+            <clr-dg-column [clrDgField]="'key'">Key</clr-dg-column>
+            <clr-dg-placeholder>Please Connect then Get/Scan Keys</clr-dg-placeholder>
+            <clr-dg-row *clrDgItems="let key of keys; let i=index">
+                <clr-dg-cell (click)="keyClick(key)">{{key.key}}</clr-dg-cell>
+            </clr-dg-row>
+        </clr-datagrid>
+    </div>
+</div>
