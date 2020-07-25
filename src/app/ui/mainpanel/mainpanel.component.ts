@@ -12,7 +12,7 @@ export class MainpanelComponent implements OnInit, OnDestroy {
 
   private onDataAvailable: Subscription;
 
-  private key: Key;
+  key: Key;
 
   count: number = 0;
 

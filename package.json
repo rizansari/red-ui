@@ -11,7 +11,7 @@
     "Redis GUI"
   ],
   "author": "Rizwan Ansari",
-    "license": "MIT",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -19,7 +19,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "electron": "electron ."
+    "electron": "electron .",
+    "ebuild": "electron-packager . --asar --overwrite --icon=src/assets/images/icon.ico"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "@clr/ui": "next",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "angular-split": "^3.0.3",
+    "electron-packager": "^15.0.0",
     "ioredis": "^4.17.3",
     "rxjs": "~6.6.0",
     "tslib": "^1.9.0",

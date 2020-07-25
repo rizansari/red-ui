@@ -44,3 +44,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+/RedUI - Redis Desktop-win32-x64
