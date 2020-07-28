@@ -4,7 +4,7 @@
 
 <hr/>
 
-> Cross platform Redis Desktop Manager built with Electron, Angular, Clarity UI and ioredis.
+> Cross platform Redis Desktop Manager built with **Electron**, **Angular**, **Clarity UI** and **ioredis**.
 
 ## Main Features
 - Cross platform
