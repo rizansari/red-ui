@@ -1,1 +1,3 @@
-<app-sidepanel-list></app-sidepanel-list>
+
+<app-sidepanel-list *ngIf="!isTreeView"></app-sidepanel-list>
+<app-sidepanel-tree *ngIf="isTreeView"></app-sidepanel-tree>

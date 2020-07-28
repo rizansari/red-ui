@@ -16,6 +16,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   status: string = "UNDEFINED";
   filterExp: string = "";
 
+  private isTree: boolean = false;
+
   constructor(
     private redisService: RedisService,
     private cd: ChangeDetectorRef
@@ -71,5 +73,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   scanMore() {
     this.redisService.scanMore();
+  }
+
+  toggleView() {
+    this.isTree = !this.isTree;
+
+    this.redisService.setView(this.isTree);
   }
 }

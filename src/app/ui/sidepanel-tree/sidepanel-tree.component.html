@@ -1,1 +1,24 @@
-<p>sidepanel-tree works!</p>
+<div class="overflow-y-scroll">
+    <clr-tree #tree [clrLazy]="true" [clrLoading]="true">
+        <div *ngIf="keyTree && keyTree.root">
+            <clr-tree-node *clrRecursiveFor="let key of keyTree.root.Children; getChildren: getChildren"
+                [clrExpanded]="key.Selected" [ngClass]="{'selected' : key.Selected && key.Children.length == 0}">
+                <a class="clr-treenode-link" *ngIf="key.Children.length == 0" (click)="keyClick(key.keyObject)">
+                    <clr-icon shape="key" class="is-solid"></clr-icon>
+                    {{key.Key}}
+    
+                </a>
+    
+                <a class="clr-treenode-link" *ngIf="key.Children && key.Children.length > 0">
+                    <clr-icon shape="folder" class=""></clr-icon>
+                    {{key.Key}}
+                    <span class="badge">{{ key.Children.length }}</span>
+                </a>
+
+                <a>
+                    <clr-icon shape="trash" (click)="deleteKey(key.keyObject)"></clr-icon>
+                </a>
+            </clr-tree-node>
+        </div>
+    </clr-tree>
+</div>

@@ -42,6 +42,8 @@ export class RedisService {
 
   OnInfoDataAvailable: EventEmitter<any> = new EventEmitter();
 
+  OnViewChange: EventEmitter<any> = new EventEmitter();
+
   Keys(): Key[] {
     return this.keys;
   }
@@ -296,4 +298,9 @@ export class RedisService {
       this.OnInfoDataAvailable.emit(data);
     });
   }
+
+  setView(isTree: boolean) {
+    this.OnViewChange.emit(isTree);
+  }
+  
 }

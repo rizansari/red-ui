@@ -8,12 +8,12 @@
     <div class="header-nav">
         <a [routerLink]="" role="tooltip" aria-haspopup="true"
             class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="showConnectDialog()">
-            <clr-icon size="32" shape="connect" class="is-success is-solid"></clr-icon>
+            <clr-icon size="32" shape="connect" class="is-success is-inverse"></clr-icon>
             <span class="tooltip-content">Connect</span>
         </a>
         <a [routerLink]="" role="tooltip" aria-haspopup="true"
             class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="disconnect()">
-            <clr-icon size="32" shape="disconnect" class="is-error is-solid"></clr-icon>
+            <clr-icon size="32" shape="disconnect" class="is-error is-inverse"></clr-icon>
             <span class="tooltip-content">Disconnect</span>
         </a>
     </div>
@@ -27,21 +27,29 @@
     <div class="header-nav">
         <a [routerLink]="" role="tooltip" aria-haspopup="true"
             class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="scanKeys()">
-            <clr-icon size="32" shape="install" class="is-success is-solid"></clr-icon>
+            <clr-icon size="32" shape="install" class="is-success is-inverse"></clr-icon>
             <span class="tooltip-content">Scan Keys</span>
         </a>
 
         <a [routerLink]="" role="tooltip" aria-haspopup="true"
             class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="scanMore()">
-            <clr-icon size="32" shape="sync" class="is-success is-solid"></clr-icon>
+            <clr-icon size="32" shape="sync" class="is-success is-inverse"></clr-icon>
             <span class="tooltip-content">Load More</span>
         </a>
     </div>
     <div class="header-nav">
         <a [routerLink]="" role="tooltip" aria-haspopup="true"
             class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="getKeys()">
-            <clr-icon size="32" shape="download" class="is-success is-solid"></clr-icon>
+            <clr-icon size="32" shape="download" class="is-success is-inverse"></clr-icon>
             <span class="tooltip-content">Get Keys</span>
+        </a>
+    </div>
+    <div class="header-nav">
+        <a [routerLink]="" role="tooltip" aria-haspopup="true"
+            class="tooltip tooltip-sm tooltip-bottom-right nav-link nav-icon" (click)="toggleView()">
+            <clr-icon *ngIf="!isTree" size="32" shape="view-list" class="is-warning  is-inverse"></clr-icon>
+            <clr-icon *ngIf="isTree" size="32" shape="tree-view" class="is-warning  is-inverse"></clr-icon>
+            <span class="tooltip-content">Toggle view</span>
         </a>
     </div>
     <div class="header-actions">
@@ -49,6 +57,7 @@
             <span class="nav-text">Status: {{ status }}</span>
         </a>
     </div>
+    
 </header>
 
 <clr-modal [(clrModalOpen)]="connectDialog">
