@@ -6,6 +6,9 @@
 
 > Cross platform Redis Desktop Manager built with **Electron**, **Angular**, **Clarity UI** and **ioredis**.
 
+## Website
+[https://rizwanansari.net/redui-redis-desktop/](https://rizwanansari.net/redui-redis-desktop/)
+
 ## Main Features
 - Cross platform
 - Supports List view and Tree view
